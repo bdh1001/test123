@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace LoginForm
 {
-
+//remote ìˆ˜ì •
 
     public partial class Form1 : Form
     {
@@ -24,24 +24,24 @@ namespace LoginForm
 
         private void Login_Click(object sender, EventArgs e)
         {
-            //sql µ¥ÀÌÅÍº£ÀÌ½º ÀÌ¿ë ¿¬µ¿
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\meganext\Documents\Data1.mdf;Integrated Security=True;Connect Timeout=30"); //sql µ¥ÀÌÅÍ º£ÀÌ½º ¿¬°á °´Ã¼»ı¼º 
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) from USERINFO Where USERNAME='"+ID_txt.Text+"'and PASSWORD='"+PW_txt.Text+"'",con); //Äõ¸®¹®°ú C#À» °°ÀÌ
+            //sql ë°ì´í„°ë² ì´ìŠ¤ ì´ìš© ì—°ë™
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\meganext\Documents\Data1.mdf;Integrated Security=True;Connect Timeout=30"); //sql ë°ì´í„° ë² ì´ìŠ¤ ì—°ê²° ê°ì²´ìƒì„± 
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) from USERINFO Where USERNAME='"+ID_txt.Text+"'and PASSWORD='"+PW_txt.Text+"'",con); //ì¿¼ë¦¬ë¬¸ê³¼ C#ì„ ê°™ì´
             con.Open();
-            DataTable newtable = new DataTable();//userifo¸¦ ÀÌ¿ëÇØ »õ·Î¿î Å×ÀÌºí
-            //¾ÆÀÌµğ¿Í ÆĞ½º¿öµå°¡ ¸Â´Ù¸é newtableÀ» 1·Î ¹İÈ¯ ¾Æ´Ï¸é 0À¸·Î ¹İÈ¯
+            DataTable newtable = new DataTable();//userifoë¥¼ ì´ìš©í•´ ìƒˆë¡œìš´ í…Œì´ë¸”
+            //ì•„ì´ë””ì™€ íŒ¨ìŠ¤ì›Œë“œê°€ ë§ë‹¤ë©´ newtableì„ 1ë¡œ ë°˜í™˜ ì•„ë‹ˆë©´ 0ìœ¼ë¡œ ë°˜í™˜
             sda.Fill(newtable);
 
-            if (newtable.Rows[0][0].ToString() == "1")//·Î±×ÀÎÀÌ ¼º°øÇÒ °æ¿ì
+            if (newtable.Rows[0][0].ToString() == "1")//ë¡œê·¸ì¸ì´ ì„±ê³µí•  ê²½ìš°
             {
                 this.Hide();
 
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
             }
-            else//·Î±×ÀÎ ½ÇÆĞ½Ã
+            else//ë¡œê·¸ì¸ ì‹¤íŒ¨ì‹œ
             {
-                MessageBox.Show("¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä");
+                MessageBox.Show("ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”");
             }          
             
         }
