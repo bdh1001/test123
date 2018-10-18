@@ -59,18 +59,18 @@ namespace LoginForm
                 {
                     idCheckd = false;
                     label1.ForeColor = Color.Red;
-                    label1.Text = "¾ÆÀÌµğ Áßº¹";
+                    label1.Text = "ì•„ì´ë”” ì¤‘ë³µ";
 
                 }
                 else
                 {
                     idCheckd = true;
                     label1.ForeColor = Color.Blue;
-                    label1.Text = "OKÈ®ÀÎ";
+                    label1.Text = "OKí™•ì¸";
                 }
                 con.Close();
             }
-            
+            //í•˜ì•„ì•„ì´
 
         }
 
@@ -99,12 +99,12 @@ namespace LoginForm
 
                 if (i==1)
                 {
-                    MessageBox.Show("°¡ÀÔ¿Ï·á", "È®ÀÎ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ê°€ì…ì™„ë£Œ", "í™•ì¸", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 else
                 {
-                    MessageBox.Show("ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇÏ¼¼¿ä", "È®ÀÎ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•˜ì„¸ìš”", "í™•ì¸", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
             }
