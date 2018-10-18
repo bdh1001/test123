@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace LoginForm
 {
+//second version
     public partial class Join : Form
     {
         public Join()
@@ -58,14 +59,14 @@ namespace LoginForm
                 {
                     idCheckd = false;
                     label1.ForeColor = Color.Red;
-                    label1.Text = "ì•„ì´ë”” ì¤‘ë³µ";
+                    label1.Text = "¾ÆÀÌµğ Áßº¹";
 
                 }
                 else
                 {
                     idCheckd = true;
                     label1.ForeColor = Color.Blue;
-                    label1.Text = "OKí™•ì¸";
+                    label1.Text = "OKÈ®ÀÎ";
                 }
                 con.Close();
             }
@@ -98,12 +99,12 @@ namespace LoginForm
 
                 if (i==1)
                 {
-                    MessageBox.Show("ê°€ì…ì™„ë£Œ", "í™•ì¸", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("°¡ÀÔ¿Ï·á", "È®ÀÎ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 else
                 {
-                    MessageBox.Show("ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•˜ì„¸ìš”", "í™•ì¸", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇÏ¼¼¿ä", "È®ÀÎ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 con.Close();
             }

@@ -12,7 +12,11 @@ using MySql.Data.MySqlClient;
 
 namespace LoginForm
 {
+<<<<<<< HEAD
 //git branch
+======= 
+//remote ?˜ì •
+>>>>>>> 23f642bb4a5755b05c6d410c88f41985c23e01a5
 
     public partial class Form1 : Form
     {
@@ -24,24 +28,24 @@ namespace LoginForm
 
         private void Login_Click(object sender, EventArgs e)
         {
-            //sql µ¥ÀÌÅÍº£ÀÌ½º ÀÌ¿ë ¿¬µ¿
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\meganext\Documents\Data1.mdf;Integrated Security=True;Connect Timeout=30"); //sql µ¥ÀÌÅÍ º£ÀÌ½º ¿¬°á °´Ã¼»ı¼º 
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) from USERINFO Where USERNAME='"+ID_txt.Text+"'and PASSWORD='"+PW_txt.Text+"'",con); //Äõ¸®¹®°ú C#À» °°ÀÌ
+            //sql ?°ì´?°ë² ?´ìŠ¤ ?´ìš© ?°ë™
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\meganext\Documents\Data1.mdf;Integrated Security=True;Connect Timeout=30"); //sql ?°ì´??ë² ì´???°ê²° ê°ì²´?ì„± 
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) from USERINFO Where USERNAME='"+ID_txt.Text+"'and PASSWORD='"+PW_txt.Text+"'",con); //ì¿¼ë¦¬ë¬¸ê³¼ C#??ê°™ì´
             con.Open();
-            DataTable newtable = new DataTable();//userifo¸¦ ÀÌ¿ëÇØ »õ·Î¿î Å×ÀÌºí
-            //¾ÆÀÌµğ¿Í ÆĞ½º¿öµå°¡ ¸Â´Ù¸é newtableÀ» 1·Î ¹İÈ¯ ¾Æ´Ï¸é 0À¸·Î ¹İÈ¯
+            DataTable newtable = new DataTable();//userifoë¥??´ìš©???ˆë¡œ???Œì´ë¸?
+            //?„ì´?”ì? ?¨ìŠ¤?Œë“œê°€ ë§ë‹¤ë©?newtable??1ë¡?ë°˜í™˜ ?„ë‹ˆë©?0?¼ë¡œ ë°˜í™˜
             sda.Fill(newtable);
 
-            if (newtable.Rows[0][0].ToString() == "1")//·Î±×ÀÎÀÌ ¼º°øÇÒ °æ¿ì
+            if (newtable.Rows[0][0].ToString() == "1")//ë¡œê·¸?¸ì´ ?±ê³µ??ê²½ìš°
             {
                 this.Hide();
 
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
             }
-            else//·Î±×ÀÎ ½ÇÆĞ½Ã
+            else//ë¡œê·¸???¤íŒ¨??
             {
-                MessageBox.Show("¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä");
+                MessageBox.Show("?„ì´?”ì? ë¹„ë?ë²ˆí˜¸ë¥??•ì¸?´ì£¼?¸ìš”");
             }          
             
         }
@@ -51,5 +55,5 @@ namespace LoginForm
             Join join = new Join();
             join.Show();
         }
-    }
+    } //zzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 }
